@@ -1,7 +1,6 @@
 class Person
-    attr_accessor :bank_account
+    attr_accessor :bank_account, :happiness, :hygiene
     attr_reader :name
-    attr_writer :happiness, :hygiene
 
     def initialize(name)
         @name = name
@@ -19,19 +18,11 @@ class Person
     end
 
     def happy?
-        if @happiness > 7
-            true
-        else
-            false
-        end
+        @happiness > 7 ? true : false
     end
 
     def clean?
-        if @hygiene > 7
-            true
-        else
-            false
-        end
+        @hygiene > 7 ? true : false
     end
 
     def get_paid(salary)
@@ -45,8 +36,8 @@ class Person
     end
 
     def work_out
-        self.happiness += 2
         self.hygiene -= 3
+        self.happiness += 2
         "♪ another one bites the dust ♫"
     end
 
